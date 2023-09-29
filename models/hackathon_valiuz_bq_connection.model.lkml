@@ -25,17 +25,23 @@ persist_with: hackathon_valiuz_bq_connection_default_datagroup
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
 
-explore: electriques_collectes {}
+explore: electriques_collectes {
+  label: "Opendata Équipements électriques et électroniques collectés"
+  description: "Le jeu de données présente les tonnages pris en charge depuis 2018 par la filière des Equipements électriques et électroniques (EEE), issues de SYDEREP, par département, région, par origine, par flux et par année."
+}
 
 explore: openfoodfacts_products {
+  description: "Open Food Facts est une base de données de produits alimentaires faite par tout le monde, pour tout le monde."
 }
 
 explore: base_carbone_clean {
   label: "Opendata base carbone"
+  description: "La Base Carbone® est une base de données publique de facteurs d'émissions, nécessaires à la réalisation d’un bilan d’émissions de gaz à effet de serre (GES) et plus généralement tout exercice de comptabilité carbone."
 }
 
 explore: agribalyse {
-  label: "Opendata agribalyse"
+  label: "Opendata agribalyse (ADEME)"
+  description: "AGRIBALYSE® est une base de données de référence des indicateurs d'impacts environnementaux des produits agricoles produits en France et des produits alimentaires consommés en France."
 }
 
 explore: quantites_marche {}
