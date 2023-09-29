@@ -8,6 +8,7 @@ view: openfoodfacts_products {
   # This primary key is the unique key for this table in the underlying database.
   # You need to define a primary key in a view in order to join to other views.
 
+  # TODO: change the type in BQ to STRING because there are some codes such as this: 001103810000100390003909 which get modified (initial 0 are removed) when kept in a numeric format
   dimension: code {
     primary_key: yes
     type: number

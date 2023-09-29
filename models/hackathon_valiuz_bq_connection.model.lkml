@@ -64,13 +64,15 @@ explore: textiles_collectes {
 
 ### VALIUZ CLOSED DATA ###
 
-explore: current_weather {
-  group_label: "Valiuz Closed Data"
-}
+#TODO : Check with Valiuz if they need to be exposed
 
-explore: poste_estocade {
-  group_label: "Valiuz Closed Data"
-}
+# explore: current_weather {
+#   group_label: "Valiuz Closed Data"
+# }
+
+# explore: poste_estocade {
+#   group_label: "Valiuz Closed Data"
+# }
 
 
 ### VALIUZ ENTITY ###
