@@ -11,6 +11,7 @@ view: profiles {
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
   dimension_group: _partitiondate {
+    hidden: yes
     type: time
     timeframes: [raw, date, week, month, quarter, year]
     convert_tz: no
@@ -19,6 +20,7 @@ view: profiles {
   }
 
   dimension_group: _partitiontime {
+    hidden: yes
     type: time
     timeframes: [raw, date, week, month, quarter, year]
     convert_tz: no

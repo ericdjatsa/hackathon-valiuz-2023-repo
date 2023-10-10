@@ -9,7 +9,7 @@ include: "/views/**/*.view.lkml"
 
 datagroup: hackathon_valiuz_bq_connection_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "1 hour"
+  max_cache_age: "24 hour"
 }
 
 persist_with: hackathon_valiuz_bq_connection_default_datagroup
@@ -76,6 +76,35 @@ explore: textiles_collectes {
 
 
 ### VALIUZ ENTITY ###
+explore: profiles_scores_tickets_produits {
+  always_filter: {
+    # Add a default 7 days filters on tickets.date_ticket_date
+    filters: [tickets.date_ticket_date: "2020-09-26 to 2020-10-03"]
+  }
+  group_label: "Profiles, Scores, Tickets, Produits"
+  view_name: profiles
+  join: scores {
+    relationship: one_to_one
+    type: inner
+    sql_on: ${profiles.idclient_ens} = ${scores.idclient_ens} AND ${profiles.member} = ${scores.member} ;;
+  }
+  join: tickets {
+    relationship: one_to_many
+    type: inner
+    sql_on: ${scores.idclient_ens} = ${tickets.idclient_ens} ;;
+  }
+  join: tickets_detailled {
+    relationship: one_to_many
+    type: inner
+    sql_on: ${tickets.ticket_uid} = ${tickets_detailled.product_uid};;
+  }
+  join: product_nomenclature {
+    relationship: one_to_many
+    type: inner
+    sql_on: ${tickets_detailled.product_uid} = ${product_nomenclature.product_uid} ;;
+  }
+}
+
 explore: navigation_web {
   group_label: "Valiuz Entity"
 

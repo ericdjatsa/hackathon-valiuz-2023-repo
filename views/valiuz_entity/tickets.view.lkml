@@ -1,5 +1,6 @@
 # The name of this view in Looker is "Tickets"
 view: tickets {
+  # Dates tickets disponibles : du 2020-09-26 au 2020-11-09
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
   sql_table_name: `valiuz_entity.TICKETS` ;;
@@ -21,7 +22,8 @@ view: tickets {
 
   dimension_group: date_ticket {
     type: time
-    description: "Date démission du ticket par l’enseigne, fourni par l'enseigne."
+    description: "Date démission du ticket par l’enseigne, fourni par l'enseigne.
+    Dates tickets disponibles : du 2020-09-26 au 2020-11-09"
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.DATE_TICKET ;;
   }
