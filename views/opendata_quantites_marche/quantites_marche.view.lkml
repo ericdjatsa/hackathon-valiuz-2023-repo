@@ -9,7 +9,7 @@ view: quantites_marche {
 
     # Here's what a typical dimension looks like in LookML.
     # A dimension is a groupable field that can be used to filter query results.
-    # This dimension will be called "Annee Des Donnees" in Explore.
+    # This dimension will be called "Annee Des Donnees" in Explore.test
 
   dimension: annee_des_donnees {
     type: number
